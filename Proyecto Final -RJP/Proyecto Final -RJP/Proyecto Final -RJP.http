@@ -1,0 +1,6 @@
+@Proyecto_Final__RJP_HostAddress = http://localhost:5228
+
+GET {{Proyecto_Final__RJP_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
