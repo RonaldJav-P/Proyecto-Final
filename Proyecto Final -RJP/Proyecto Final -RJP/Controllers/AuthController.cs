@@ -26,7 +26,6 @@ namespace ProyectoFinalRJP.Controllers
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginModel login)
         {
-            // Aquí validas usuario y contraseña (puedes cambiarlo por tu lógica real)
             if (login.Username != "admin" || login.Password != "1234")
                 return Unauthorized(new { message = "Usuario o contraseña incorrectos" });
 
@@ -38,7 +37,6 @@ namespace ProyectoFinalRJP.Controllers
             {
                 Subject = new ClaimsIdentity(new[] {
                     new Claim(ClaimTypes.Name, login.Username),
-                    // Agrega más claims si quieres
                 }),
                 Expires = DateTime.UtcNow.AddHours(1),
                 Issuer = jwtSettings["Issuer"],
